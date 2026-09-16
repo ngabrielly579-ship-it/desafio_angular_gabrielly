@@ -1,0 +1,12 @@
+<nav class="barra">
+  <button class="menu-btn" (click)="menuAberto = !menuAberto" aria-label="Abrir menu">☰</button>
+  <img src="assets/img/ford.png" alt="Ford" class="logo">
+  <span class="nome-projeto">Painel de Gabrielly Sacramento</span>
+</nav>
+
+<div class="menu-lateral" [class.aberto]="menuAberto">
+  <a routerLink="/home" (click)="menuAberto = false">Início</a>
+  <a routerLink="/dashboard" (click)="menuAberto = false">Veículos</a>
+  <button (click)="logout()">Sair</button>
+</div>
+<div class="sombra" *ngIf="menuAberto" (click)="menuAberto = false"></div>

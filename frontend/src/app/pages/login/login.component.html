@@ -1,0 +1,35 @@
+<div class="login-page">
+  <section class="lado-carro">
+    <img src="assets/img/ranger.png" alt="Ford Ranger">
+  </section>
+
+  <section class="lado-form">
+    <div class="caixa-login">
+      <img src="assets/img/ford.png" alt="Ford" class="logo-login">
+      <p class="assinatura">Projeto de Gabrielly Sacramento</p>
+      <h2>Acesse sua conta</h2>
+
+      <form (ngSubmit)="entrar()" #formLogin="ngForm">
+        <div class="mb-3">
+          <label class="form-label">Usuário</label>
+          <input class="form-control" name="nome" [(ngModel)]="nome" placeholder="Insira seu usuário" required>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Senha</label>
+          <input class="form-control" type="password" name="senha" [(ngModel)]="senha" placeholder="Insira sua senha" required>
+        </div>
+
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="lembrar" name="lembrar" [(ngModel)]="manterLogado">
+          <label class="form-check-label" for="lembrar">Logar automaticamente</label>
+        </div>
+
+        <p class="erro" *ngIf="mensagem">{{ mensagem }}</p>
+        <button class="btn btn-secondary w-100" [disabled]="carregando || formLogin.invalid">
+          {{ carregando ? 'Entrando...' : 'Entrar' }}
+        </button>
+      </form>
+    </div>
+  </section>
+</div>

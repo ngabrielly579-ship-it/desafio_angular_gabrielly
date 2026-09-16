@@ -1,0 +1,13 @@
+.dashboard { min-height: calc(100vh - 66px); background: #f5f8fa; }
+h1 { text-align: left; color: #173f5c; font-size: 28px; margin: 5px 0 28px; font-weight: 700; }
+.painel { border: 0; border-radius: 12px; box-shadow: 0 5px 17px rgba(38,69,91,.1); }
+.painel .card-body { min-height: 120px; display: flex; flex-direction: column; gap: 7px; }
+.painel span, .painel label { font-size: 14px; color: #333; }
+.painel strong { display: block; font-size: 30px; color: #0086c9; line-height: 1; }
+.painel small { color: #59636d; }
+.carro-area { height: 380px; display: flex; justify-content: center; align-items: center; padding: 10px; }
+.carro-area img { max-height: 350px; max-width: 650px; width: 100%; object-fit: contain; filter: drop-shadow(0 18px 14px rgba(30,55,70,.16)); }
+.busca-vin { max-width: 650px; }
+.table thead th { background: #005a9c; color: white; font-weight: 500; white-space: nowrap; }
+.table td { font-size: 13px; white-space: nowrap; }
+@media (max-width: 700px) { .carro-area { height: 230px; } }

@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<main class="dashboard container-fluid py-4 px-lg-5">
+  <h1>Central de Veículos Ford</h1>
+
+  <div class="row g-3 cards">
+    <div class="col-12 col-md-3">
+      <div class="card painel h-100">
+        <div class="card-body">
+          <label for="veiculo" class="card-title">Veículo</label>
+          <select id="veiculo" class="form-select" [ngModel]="veiculoSelecionado?.id" (ngModelChange)="selecionarVeiculo($event)">
+            <option *ngFor="let item of veiculos" [value]="item.id">{{ item.vehicle }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-3">
+      <div class="card painel h-100"><div class="card-body"><span>Total de Vendas</span><strong>{{ veiculoSelecionado?.volumetotal || 0 }}</strong><small>Unid.</small></div></div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="card painel h-100"><div class="card-body"><span>Conectados</span><strong>{{ veiculoSelecionado?.connected || 0 }}</strong><small>Unid.</small></div></div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="card painel h-100"><div class="card-body"><span>Update Software</span><strong>{{ veiculoSelecionado?.softwareUpdates || 0 }}</strong><small>Unid.</small></div></div>
+    </div>
+  </div>
+
+  <div class="carro-area">
+    <img [src]="imagemVeiculo()" [alt]="veiculoSelecionado?.vehicle || 'Veículo Ford'">
+  </div>
+
+  <section class="dados-veiculo">
+    <div class="input-group mb-3 busca-vin">
+      <span class="input-group-text">Código - Vin</span>
+      <input class="form-control" [ngModel]="vin" (ngModelChange)="digitouVin($event)" (keyup.enter)="buscarVin()" placeholder="Digite o VIN">
+      <button class="btn btn-primary" (click)="buscarVin()">Buscar</button>
+    </div>
+
+    <p class="text-danger" *ngIf="mensagemVin">{{ mensagemVin }}</p>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm align-middle">
+        <thead>
+          <tr>
+            <th>Código - Vin</th>
+            <th>Odômetro</th>
+            <th>Nível de Combustível</th>
+            <th>Status</th>
+            <th>Lat.</th>
+            <th>Long.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="dados">
+            <td>{{ dados.vin }}</td>
+            <td>{{ dados.odometer }} km</td>
+            <td>{{ dados.fuelLevel }}%</td>
+            <td>{{ dados.status }}</td>
+            <td>{{ dados.lat }}</td>
+            <td>{{ dados.long }}</td>
+          </tr>
+          <tr *ngIf="!dados"><td colspan="6" class="text-center text-muted">Pesquise um VIN para visualizar os dados.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>

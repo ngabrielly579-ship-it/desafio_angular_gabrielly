@@ -1,0 +1,3 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: "Trebuchet MS", Verdana, sans-serif; background: #f4f6f8; color: #263442; }
+* { box-sizing: border-box; }

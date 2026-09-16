@@ -1,0 +1,9 @@
+.barra { height: 66px; background: #fff; border-bottom: 3px solid #e6edf2; display: flex; align-items: center; padding: 0 24px; position: relative; z-index: 20; }
+.menu-btn { border: 0; background: transparent; font-size: 24px; color: #003478; cursor: pointer; }
+.logo { width: 94px; margin-left: 20px; }
+.nome-projeto { margin-left: auto; color: #365267; font-size: 14px; }
+.menu-lateral { position: fixed; top: 66px; left: -240px; width: 230px; height: calc(100% - 66px); background: #f8fafc; z-index: 30; padding: 24px 16px; transition: left .2s ease; box-shadow: 3px 0 10px rgba(0,0,0,.12); }
+.menu-lateral.aberto { left: 0; }
+.menu-lateral a, .menu-lateral button { display: block; width: 100%; padding: 11px 10px; text-align: left; border: 0; background: transparent; color: #333; text-decoration: none; cursor: pointer; border-radius: 4px; }
+.menu-lateral a:hover, .menu-lateral button:hover { background: #f0f3f6; }
+.sombra { position: fixed; inset: 66px 0 0 0; background: rgba(0,0,0,.25); z-index: 25; }

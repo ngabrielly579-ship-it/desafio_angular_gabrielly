@@ -1,0 +1,7 @@
+.home { min-height: calc(100vh - 66px); background: linear-gradient(90deg, rgba(238,246,251,.97) 0 38%, rgba(255,255,255,.18) 72%), url('/assets/img/ranger.png') 78% center/68% auto no-repeat #fff; display: flex; align-items: center; padding: 60px 7%; }
+.cartao { width: 430px; padding: 42px; background: rgba(255,255,255,.9); border-left: 5px solid #0072ce; border-radius: 0 18px 18px 0; box-shadow: 0 14px 35px rgba(16,51,77,.16); }
+.cartao span { color: #0072ce; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+.cartao h1 { font-size: 30px; margin: 10px 0 12px; color: #17364d; }
+.cartao p { color: #5c6b75; line-height: 1.55; margin-bottom: 24px; }
+.cartao a { display: inline-block; color: white; background: #006bb6; padding: 11px 20px; border-radius: 7px; text-decoration: none; }
+@media (max-width: 800px) { .home { background-size: 110%; background-position: center 22%; align-items: flex-end; padding: 35px 20px; } .cartao { width: 100%; } }
