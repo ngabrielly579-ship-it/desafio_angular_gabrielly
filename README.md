@@ -1,55 +1,77 @@
-# Desafio 7 - Angular | Dashboard Ford
+# Dashboard de Veículos Ford — Angular
 
-Versão pessoal desenvolvida para Gabrielly Sacramento com Angular e os arquivos de suporte do projeto Ford.
+**Aluna:** Gabrielly Sacramento
 
-## O que foi implementado
+Este projeto apresenta um painel para consulta e acompanhamento de veículos Ford. A aplicação foi construída em Angular e utiliza uma API REST para realizar o login e fornecer as informações exibidas no dashboard.
 
-- Página de login com usuário e senha.
-- Login usando a API REST.
-- Opção "Logar automaticamente".
-- Página Home com imagem de fundo, mensagem de boas-vindas, menu e link para o Dashboard.
-- Logout.
-- Dashboard com seleção de veículo.
-- Cards com total de vendas, veículos conectados e atualizações de software.
-- Troca da imagem conforme o modelo selecionado.
-- Busca de veículo pelo VIN.
-- Tabela com VIN, odômetro, combustível, status, latitude e longitude.
-- Uso de Angular Modules, Components e Services.
-- Uso de Bootstrap.
-- Uso de ngModel, ngIf e ngFor.
-- Uso de RxJS com map, pluck, debounceTime, filter e distinctUntilChanged.
+## Funcionalidades
 
-## Imagens
+O sistema possui:
 
-As imagens em `frontend/src/assets/img` são as mesmas disponibilizadas no ZIP da atividade:
+* autenticação com usuário e senha;
+* opção para manter o usuário conectado;
+* página inicial com acesso ao painel;
+* menu de navegação e função de logout;
+* seleção entre diferentes modelos de veículos;
+* exibição do total de vendas;
+* quantidade de veículos conectados;
+* número de atualizações de software;
+* alteração da imagem conforme o veículo selecionado;
+* pesquisa de informações utilizando o código VIN;
+* tabela com odômetro, combustível, status e localização.
 
-- ranger.png
-- mustang.png
-- territory.png
-- broncoSport.png
-- ford.png
+No desenvolvimento foram utilizados Angular, Bootstrap, Services, Components, rotas protegidas e recursos como `ngModel`, `ngIf` e `ngFor`. O tratamento das informações também utiliza operadores do RxJS.
 
-## Como iniciar no Windows
+## Estrutura do projeto
 
-A forma mais simples é executar:
+O projeto está dividido em duas partes:
 
-`INICIAR_PROJETO.bat`
+```text
+backend/    API e banco de dados
+frontend/   aplicação desenvolvida em Angular
+```
 
-Ele abre a API e o Angular em duas janelas de terminal. Na primeira execução, também instala as dependências com `npm install`.
+As imagens dos veículos estão localizadas em:
 
-Depois acesse:
+```text
+frontend/src/assets/img
+```
 
-`http://localhost:4200`
+Modelos disponíveis:
 
-## Login solicitado no enunciado
+* Ford Ranger;
+* Ford Mustang;
+* Ford Territory;
+* Ford Bronco Sport.
 
-Usuário: `admin`
+## Como executar
 
-Senha: `123456`
+É necessário ter o Node.js instalado no computador.
 
-## Execução manual
+No Windows, execute o arquivo:
 
-### Terminal 1 - API
+```text
+INICIAR_PROJETO.bat
+```
+
+Esse arquivo inicia o backend e o frontend em janelas separadas. Na primeira execução, as dependências serão instaladas automaticamente.
+
+Quando o carregamento terminar, acesse:
+
+```text
+http://localhost:4200
+```
+
+## Dados para login
+
+```text
+Usuário: admin
+Senha: 123456
+```
+
+## Inicialização manual
+
+Para iniciar a API, abra um terminal na pasta do projeto e execute:
 
 ```bash
 cd backend
@@ -57,9 +79,13 @@ npm install
 npm start
 ```
 
-API: `http://localhost:3000`
+A API ficará disponível em:
 
-### Terminal 2 - Angular
+```text
+http://localhost:3000
+```
+
+Em outro terminal, execute o frontend:
 
 ```bash
 cd frontend
@@ -67,22 +93,35 @@ npm install
 npm start
 ```
 
-Site: `http://localhost:4200`
+A aplicação ficará disponível em:
 
-## Como enviar para o GitHub
+```text
+http://localhost:4200
+```
 
-Execute `ENVIAR_PARA_GITHUB.bat` e cole o link HTTPS do repositório da Gabrielly quando solicitado. Na primeira utilização, o GitHub poderá abrir o navegador para solicitar autorização.
+## Consulta por VIN
 
-## VIN para teste
+Um código disponível para testar a pesquisa é:
 
-`2FRHDUYS2Y63NHD22454`
+```text
+2FRHDUYS2Y63NHD22454
+```
 
-## Endpoints utilizados
+A consulta apresenta as seguintes informações:
 
-- `POST http://localhost:3000/login`
-- `GET http://localhost:3000/vehicle`
-- `POST http://localhost:3000/vehicleData`
+* código VIN;
+* quilometragem registrada;
+* nível de combustível;
+* situação do veículo;
+* latitude;
+* longitude.
 
-## Observação sobre o arquivo de suporte
+## Rotas utilizadas pela aplicação
 
-O ZIP fornecido contém o banco de dados e o `server.js` original, porém as pastas internas da API vieram sem os arquivos necessários para o servidor original funcionar. Por isso, a pasta `backend` deste projeto contém uma API Express simples que usa o mesmo banco `data2.db` e disponibiliza os endpoints exigidos pelo desafio.
+```text
+POST /login
+GET /vehicle
+POST /vehicleData
+```
+
+O backend utiliza Express e o banco de dados `data2.db` para disponibilizar as informações necessárias ao funcionamento do dashboard.
