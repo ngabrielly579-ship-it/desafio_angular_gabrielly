@@ -5,7 +5,7 @@ import { Usuario } from '../models/usuario.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private api = 'http://localhost:3000';
+  private api = 'http://localhost:3001';
   private chave = 'usuarioFord';
 
   constructor(private http: HttpClient) {}

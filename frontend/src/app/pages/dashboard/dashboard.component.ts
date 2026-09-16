@@ -59,6 +59,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   imagemVeiculo(): string {
+    if (this.veiculoSelecionado?.img) return this.veiculoSelecionado.img;
     const nome = this.veiculoSelecionado?.vehicle.toLowerCase() || '';
     if (nome.includes('mustang')) return 'assets/img/mustang.png';
     if (nome.includes('territory')) return 'assets/img/territory.png';

@@ -1,77 +1,55 @@
-# Desafio 7 - Dashboard de Veículos Ford — Angular
+# Desafio 7 - Angular | Dashboard Ford
 
-**Aluna:** Gabrielly Sacramento
+Versão pessoal desenvolvida para Gabrielly Sacramento com Angular e os arquivos de suporte do projeto Ford.
 
-Este projeto apresenta um painel para consulta e acompanhamento de veículos Ford. A aplicação foi construída em Angular e utiliza uma API REST para realizar o login e fornecer as informações exibidas no dashboard.
+## O que foi implementado
 
-## Funcionalidades
+- Página de login com usuário e senha.
+- Login usando a API REST.
+- Opção "Logar automaticamente".
+- Página Home com imagem de fundo, mensagem de boas-vindas, menu e link para o Dashboard.
+- Logout.
+- Dashboard com seleção de veículo.
+- Cards com total de vendas, veículos conectados e atualizações de software.
+- Troca da imagem conforme o modelo selecionado.
+- Busca de veículo pelo VIN.
+- Tabela com VIN, odômetro, combustível, status, latitude e longitude.
+- Uso de Angular Modules, Components e Services.
+- Uso de Bootstrap.
+- Uso de ngModel, ngIf e ngFor.
+- Uso de RxJS com map, pluck, debounceTime, filter e distinctUntilChanged.
 
-O sistema possui:
+## Imagens
 
-* autenticação com usuário e senha;
-* opção para manter o usuário conectado;
-* página inicial com acesso ao painel;
-* menu de navegação e função de logout;
-* seleção entre diferentes modelos de veículos;
-* exibição do total de vendas;
-* quantidade de veículos conectados;
-* número de atualizações de software;
-* alteração da imagem conforme o veículo selecionado;
-* pesquisa de informações utilizando o código VIN;
-* tabela com odômetro, combustível, status e localização.
+As imagens em `frontend/src/assets/img` são as mesmas disponibilizadas no ZIP da atividade:
 
-No desenvolvimento foram utilizados Angular, Bootstrap, Services, Components, rotas protegidas e recursos como `ngModel`, `ngIf` e `ngFor`. O tratamento das informações também utiliza operadores do RxJS.
+- ranger.png
+- mustang.png
+- territory.png
+- broncoSport.png
+- ford.png
 
-## Estrutura do projeto
+## Como iniciar no Windows
 
-O projeto está dividido em duas partes:
+A forma mais simples é executar:
 
-```text
-backend/    API e banco de dados
-frontend/   aplicação desenvolvida em Angular
-```
+`INICIAR_PROJETO.bat`
 
-As imagens dos veículos estão localizadas em:
+Ele abre a API e o Angular em duas janelas de terminal. Na primeira execução, também instala as dependências com `npm install`.
 
-```text
-frontend/src/assets/img
-```
+Depois acesse:
 
-Modelos disponíveis:
+`http://localhost:4200`
 
-* Ford Ranger;
-* Ford Mustang;
-* Ford Territory;
-* Ford Bronco Sport.
+## Login solicitado no enunciado
 
-## Como executar
+Usuário: `admin`
 
-É necessário ter o Node.js instalado no computador.
+Senha: `123456`
 
-No Windows, execute o arquivo:
+## Execução manual
 
-```text
-INICIAR_PROJETO.bat
-```
-
-Esse arquivo inicia o backend e o frontend em janelas separadas. Na primeira execução, as dependências serão instaladas automaticamente.
-
-Quando o carregamento terminar, acesse:
-
-```text
-http://localhost:4200
-```
-
-## Dados para login
-
-```text
-Usuário: admin
-Senha: 123456
-```
-
-## Inicialização manual
-
-Para iniciar a API, abra um terminal na pasta do projeto e execute:
+### Terminal 1 - API
 
 ```bash
 cd backend
@@ -79,13 +57,9 @@ npm install
 npm start
 ```
 
-A API ficará disponível em:
+API: `http://localhost:3001`
 
-```text
-http://localhost:3000
-```
-
-Em outro terminal, execute o frontend:
+### Terminal 2 - Angular
 
 ```bash
 cd frontend
@@ -93,35 +67,18 @@ npm install
 npm start
 ```
 
-A aplicação ficará disponível em:
+Site: `http://localhost:4200`
 
-```text
-http://localhost:4200
-```
+## VIN para teste
 
-## Consulta por VIN
+`2FRHDUYS2Y63NHD22454`
 
-Um código disponível para testar a pesquisa é:
+## Endpoints utilizados
 
-```text
-2FRHDUYS2Y63NHD22454
-```
+- `POST http://localhost:3001/login`
+- `GET http://localhost:3001/vehicles`
+- `POST http://localhost:3001/vehicleData`
 
-A consulta apresenta as seguintes informações:
+## API utilizada
 
-* código VIN;
-* quilometragem registrada;
-* nível de combustível;
-* situação do veículo;
-* latitude;
-* longitude.
-
-## Rotas utilizadas pela aplicação
-
-```text
-POST /login
-GET /vehicle
-POST /vehicleData
-```
-
-O backend utiliza Express e o banco de dados `data2.db` para disponibilizar as informações necessárias ao funcionamento do dashboard.
+O backend foi adaptado a partir da API Sprint 7 disponibilizada em `JMarcelloDias/Api-Sprint7`. A API Express fornece login, lista de veículos, imagens e consulta por VIN na porta 3001.
